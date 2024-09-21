@@ -1,0 +1,414 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para o body */
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Cabeçalho */
+  header {
+    position: relative;
+    background-color: #0f0147;
+    height: 150px;
+  }
+  
+  header .logo img {
+    position: absolute;
+    top: 0;
+    right: 400px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Faz com que a imagem ocupe todo o cabeçalho */
+    z-index: 1; /* Fica abaixo dos outros elementos */
+  }
+
+  header nav {
+    position: relative;
+    z-index: 2; /* Coloca os botões de navegação acima da logo */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%; /* Preenche todo o cabeçalho verticalmente */
+    padding-left: 20px;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-right: 20px; /* Distância do lado direito */
+  }
+  
+  header nav ul li a {
+    color: #ffffff;
+    background-color: #003366; /* Azul mais escuro para os botões */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background-color: #002244; /* Azul ainda mais escuro no hover */
+  }
+
+    /* Seção de Imagens de Entrada */
+#entrada-imagens {
+  display: flex; /* Alinha as imagens lado a lado */
+  padding: 0; /* Remove qualquer padding */
+  margin: 0; /* Remove qualquer margin */
+  overflow: hidden; /* Evita que as imagens transbordem */
+}
+
+#entrada-imagens .entrada-imagem {
+  flex: 1; /* Cada imagem ocupa o mesmo espaço */
+  margin: 0; /* Remove margens */
+}
+
+#entrada-imagens .entrada-imagem img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+  height: 300px;
+  display: block; /* Remove espaço abaixo da imagem */
+  border-radius: 0px; /* Bordas arredondadas */
+}
+
+/* Responsividade para telas menores */
+  @media (max-width: 768px) {
+      #entrada-imagens {
+      flex-direction: column; /* Empilha as imagens em telas pequenas */
+      }
+}
+  
+  #imagem-baixo-entrada {
+    text-align: center; /* Centraliza o conteúdo dentro da seção */
+    margin-top: 0px; /* Adiciona um espaçamento superior opcional */
+  }
+  
+  #imagem-baixo-entrada img {
+    position: relative;
+    top: 0;
+    right: 20px;
+    height: auto;
+    width: 20%;
+    object-fit: contain; /* Mantém a proporção da imagem e cobre o contêiner */
+    border-radius: 0px; /* Remove bordas arredondadas, se desejado */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    display: flex; /* Garante que a imagem seja tratada como um bloco para centralização correta */
+  }
+  
+
+  /* Seção Principal */
+
+  .hero {
+    height: 100vh;
+    background: url('images/gerador4.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center;
+    padding-top: 50px;
+    position: relative; /* Para posicionar o conteúdo relativo à hero */
+  }
+
+  .hero-content {
+    position: relative; /* Permite que o conteúdo seja posicionado sobre a imagem */
+    z-index: 2; /* Garante que o texto fique acima da imagem de fundo */
+    color: #fff; /* Altera a cor do texto para branco para melhor contraste */
+  }
+
+  .hero h1 {
+    color: #ffffff;
+    font-size: 3rem;
+  }
+
+  .hero p {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: 0px; /* Espaço acima do parágrafo */
+    margin-bottom: 50px; /* Espaço abaixo do parágrafo */
+  }
+
+  .btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .btn:hover {
+    transform: scale(1.1);
+    background-color: #002244;
+  }
+ 
+
+ .hero .btn {
+        background: #002244;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        z-index: 2; /* Garante que o botão fique acima da imagem de fundo */
+    }
+
+    /* Estilo do Container do Botão */
+    .button-container {
+        background-color: #003366; /* Cor azul escuro padrão */
+        width: 3cm; /* Largura do fundo do botão */
+        margin-top: 100px; /* Centraliza o container e adiciona espaço em cima */
+        padding: 10px 0; /* Espaço interno no container */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+    
+    .hero .btn:hover {
+        background: #2180df;
+    }
+/* Seção Sobre */
+/* Seção Sobre */
+#sobre {
+  background-color: #0f0147; /* Cor de fundo azul */
+  color: #ffffff; /* Cor do texto branco para contraste */
+  padding: 50px;
+  text-align: center; /* Centraliza o texto */
+}
+
+#sobre h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.sobre-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sobre-texto {
+  max-width: 800px;
+}
+
+.sobre-imagens {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 0 auto;
+}
+
+.sobre-imagens img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.highlight {
+  background-color: #00319c; /* Azul mais claro */
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para "Seja qual for sua necessidade" */
+#necessidade {
+  background-color: #0f0147; /* Cor de fundo azul */
+  color: #ffffff; /* Cor do texto branco */
+  padding: 50px;
+  text-align: center;
+}
+
+#necessidade h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#necessidade ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0;
+  max-width: 800px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza a lista */
+}
+
+#necessidade ul li {
+  background-color: #00319c; /* Azul mais claro para os itens */
+  color: #ffffff;
+  padding: 15px;
+  margin: 10px 0; /* Espaçamento entre os itens */
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: left; /* Texto alinhado à esquerda dentro dos itens */
+}
+
+
+/* Estilo de texto */
+.sobre p {
+  max-width: 500px;
+  background-color: #487be8;
+  color: #cb0404;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 5px;
+  display:flex;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sobre-texto, .sobre-imagens {
+    min-width: 100%;
+  }
+
+  .sobre-imagens img {
+    width: 100%;
+    max-width: 100%; /* Nas telas menores, as imagens ocupam 100% da largura disponível */
+  }
+}
+
+ /* Seção Portfólio */ 
+
+#portfolio {
+  color: #0f0147;
+  background-color: #f4f4f4;
+  padding: 30px;
+  text-align: center;
+}
+
+#portfolio h3 {
+  color: #0f0147;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.gallery .item {
+    display: flex;
+    flex-direction: column; /* Alinha a imagem e o texto verticalmente */
+    align-items: center; /* Centraliza os itens dentro do .item */
+    text-align: center; /* Centraliza o texto */
+}
+
+.gallery .item img {
+    width: 100%;
+    border-radius: 5px; /* Bordas arredondadas para as imagens */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.gallery .item h3 {
+    color: #030202;
+    margin: 10px 0; /* Espaço acima e abaixo do título */
+}
+
+.gallery .item p {
+    color: #0c0c0c;
+}
+  
+  /* Seção Contato */
+  #contact {
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    background: #aeadad;
+    box-sizing: border-box; 
+    position: relative;
+  }
+  
+  #contact form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Estilo do ícone do WhatsApp */
+.whatsapp-icon {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+  width: 200px; /* Tamanho do ícone */
+  height: 200px;
+}
+
+.whatsapp-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajusta a imagem ao tamanho do ícone */
+}
+
+.whatsapp-icon:hover {
+  opacity: 0.8; /* Efeito hover */
+}
+  
+  #contact label {
+    display: flex;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  #contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #contact button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #004080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #contact button:hover {
+    background: #003366;
+  }
+  
+  /* Rodapé */
+  footer {
+    background: #004080;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    #about .sobre-imagem img {
+      width: 100%;
+    }
+  }
+  
+
+  
