@@ -9,21 +9,28 @@
   body {
     font-family: Arial, sans-serif;
     color: #333;
+    background-color: #0f0147; /* Cor de fundo para o body */
     line-height: 1.6;
   }
   
   /* Cabeçalho */
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     position: relative;
     background-color: #0f0147;
     height: 150px;
   }
   
   header .logo img {
+
     position: absolute;
     top: 0;
-    right: 400px;
-    width: 100%;
+    right: 200px;
+    width: 150%;
+    height: auto;
     height: 100%;
     object-fit: contain; /* Faz com que a imagem ocupe todo o cabeçalho */
     z-index: 1; /* Fica abaixo dos outros elementos */
@@ -59,8 +66,19 @@
     background-color: #002244; /* Azul ainda mais escuro no hover */
   }
 
+  @media (max-width: 768px) {
+    header .logo img {
+      width: 80%; /* Ajusta a logo em dispositivos menores */
+      right: 10px; /* Evita deslocamento excessivo */
+    }
+  }
+  
+
     /* Seção de Imagens de Entrada */
 #entrada-imagens {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   display: flex; /* Alinha as imagens lado a lado */
   padding: 0; /* Remove qualquer padding */
   margin: 0; /* Remove qualquer margin */
@@ -107,7 +125,7 @@
   /* Seção Principal */
 
   .hero {
-    height: 100vh;
+    min-height: 100vh;
     background: url('images/gerador4.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column; /* Alinha os elementos em coluna */
@@ -117,7 +135,7 @@
     padding-top: 50px;
     position: relative; /* Para posicionar o conteúdo relativo à hero */
   }
-
+ 
   .hero-content {
     position: relative; /* Permite que o conteúdo seja posicionado sobre a imagem */
     z-index: 2; /* Garante que o texto fique acima da imagem de fundo */
@@ -141,12 +159,12 @@
   }
   .btn:hover {
     transform: scale(1.1);
-    background-color: #002244;
+    background-color: #00319c;
   }
  
 
  .hero .btn {
-        background: #002244;
+        background: #00319c;
         padding: 10px 20px;
         color: #fff;
         text-decoration: none;
@@ -156,7 +174,7 @@
 
     /* Estilo do Container do Botão */
     .button-container {
-        background-color: #003366; /* Cor azul escuro padrão */
+        background-color: #00319c; /* Cor azul escuro padrão */
         width: 3cm; /* Largura do fundo do botão */
         margin-top: 100px; /* Centraliza o container e adiciona espaço em cima */
         padding: 10px 0; /* Espaço interno no container */
@@ -167,9 +185,8 @@
         background: #2180df;
     }
 /* Seção Sobre */
-/* Seção Sobre */
 #sobre {
-  background-color: #0f0147; /* Cor de fundo azul */
+  background-color: #00319c; /* Cor de fundo azul */
   color: #ffffff; /* Cor do texto branco para contraste */
   padding: 50px;
   text-align: center; /* Centraliza o texto */
@@ -206,7 +223,7 @@
 }
 
 .highlight {
-  background-color: #00319c; /* Azul mais claro */
+  background-color: #002678; /* Azul mais claro */
   color: #ffffff;
   padding: 15px;
   border-radius: 10px;
@@ -215,7 +232,7 @@
 
 /* Estilo para "Seja qual for sua necessidade" */
 #necessidade {
-  background-color: #0f0147; /* Cor de fundo azul */
+  background-color: #00319c; /* Cor de fundo azul */
   color: #ffffff; /* Cor do texto branco */
   padding: 50px;
   text-align: center;
@@ -235,7 +252,7 @@
 }
 
 #necessidade ul li {
-  background-color: #00319c; /* Azul mais claro para os itens */
+  background-color: #002678; /* Azul mais claro para os itens */
   color: #ffffff;
   padding: 15px;
   margin: 10px 0; /* Espaçamento entre os itens */
@@ -248,8 +265,7 @@
 /* Estilo de texto */
 .sobre p {
   max-width: 500px;
-  background-color: #487be8;
-  color: #cb0404;
+  background-color: #00319c;
   font-weight: bold;
   padding: 20px;
   border-radius: 5px;
@@ -278,31 +294,41 @@
  /* Seção Portfólio */ 
 
 #portfolio {
-  color: #0f0147;
+  color: #00319c;
   background-color: #f4f4f4;
   padding: 30px;
   text-align: center;
 }
 
 #portfolio h3 {
-  color: #0f0147;
+  color: #00319c;
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Espaço entre os itens */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo por padrão */
+  gap: 20px;
 }
 
-.gallery .item {
-    display: flex;
-    flex-direction: column; /* Alinha a imagem e o texto verticalmente */
-    align-items: center; /* Centraliza os itens dentro do .item */
-    text-align: center; /* Centraliza o texto */
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas apenas em telas maiores */
+  }
 }
+.gallery .item {
+  display: flex;
+  flex-direction: column; /* Alinha a imagem e o texto verticalmente */
+  align-items: center; /* Centraliza os itens dentro do .item */
+  text-align: center; /* Centraliza o texto */
+}
+
+.gallery img {
+  max-width: 100%; /* Ajusta a largura das imagens */
+  height: auto; /* Mantém a proporção das imagens */
+}
+
 
 .gallery .item img {
     width: 100%;
@@ -311,15 +337,21 @@
 }
 
 .gallery .item h3 {
-    color: #030202;
+    color: #00319c;
     margin: 10px 0; /* Espaço acima e abaixo do título */
 }
 
 .gallery .item p {
-    color: #0c0c0c;
+    color: #00319c;
 }
   
   /* Seção Contato */
+  #contact input, #contact textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   #contact {
     padding: 20px;
     width: 100%;
@@ -334,15 +366,23 @@
     margin: 0 auto;
   }
 
+  @media (max-width: 768px) {
+    #sobre h2 {
+      font-size: 2rem;
+    }
+    #portfolio h3 {
+      font-size: 1.8rem;
+    }
+  }
   /* Estilo do ícone do WhatsApp */
-.whatsapp-icon {
-  position: absolute;
-  bottom: 0px;
-  right: 30px;
-  width: 200px; /* Tamanho do ícone */
-  height: 200px;
-}
-
+  .whatsapp-icon {
+    position: fixed;
+    height: 180px;
+    bottom: 5px;
+    right: 5px;
+    z-index: 1000;
+  }
+  
 .whatsapp-icon img {
   width: 100%;
   height: 100%;
@@ -370,7 +410,7 @@
   #contact button {
     margin-top: 20px;
     padding: 10px 20px;
-    background: #004080;
+    background: #00319c;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -378,12 +418,12 @@
   }
   
   #contact button:hover {
-    background: #003366;
+    background: #00319c;
   }
   
   /* Rodapé */
   footer {
-    background: #004080;
+    background: #00319c;
     padding: 10px;
     color: #fff;
     text-align: center;

@@ -1,0 +1,77 @@
+/* Estilos básicos para navegação */
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #00319c;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+header nav ul li a:hover, .active {
+    background-color: #3665cb;
+    color: white;
+}
+
+/* Estilo para o conteúdo do cabeçalho */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #00319c;
+}
+
+.header-content h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.header-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Tornar o cabeçalho responsivo */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-logo {
+        margin-top: 10px;
+    }
+}
+
+/* Estilos para o corpo da página Compliance */
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p, ul {
+    font-size: 16px;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
